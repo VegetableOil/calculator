@@ -1,0 +1,102 @@
+$border-radius: 6px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 22px;
+}
+
+@mixin widthHeight($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin flex($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
+
+body {
+    background-color: rgba(243, 243, 243, 0.747);
+}
+
+#main {
+    @include widthHeight(100%, 100vh);
+    @include flex(center, center, row);
+
+    #calculator {
+        @include widthHeight(fit-content, fit-content);
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 1fr 1.5fr;
+        grid-gap: $border-radius;
+        border-radius: $border-radius;
+        box-shadow: 0px 0px 5px 0px rgba(158,158,158,1);
+        background-color: white;
+
+        #keyboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-gap: $border-radius;
+        }
+
+        .tile:hover {
+            background-color: rgb(238, 238, 238);
+            cursor: pointer;
+        }
+
+        .tile:active {
+            background-color: rgb(165, 165, 165);
+        }
+    }
+
+    #calculator, .tile {
+        border-radius: $border-radius;
+        padding: 10px;
+    }
+
+    .tile {
+        @include flex(center, center, row);
+    }
+
+    .dark {
+        background-color: rgb(216, 216, 216);
+    }
+}
+
+#plus {
+    grid-area: plus;
+}
+
+#minus {
+    grid-area: minus;
+}
+
+#mult {
+    grid-area: mult;
+}
+
+#div {
+    grid-area: div;
+}
+
+#equals {
+    grid-area: equals;
+}
+
+#AC {
+    grid-area: AC;
+}
+
+#keyboard {
+    grid-template-areas: 
+    "nine eight seven plus"
+    "six five four minus"
+    "three two one mult"
+    "AC zero equals div";
+}
