@@ -7,7 +7,7 @@
 
 body {
     background: rgb(255,236,191);
-    background: linear-gradient(90deg, rgba(255,236,191,1) 0%, rgba(255,149,251,1) 100%);
+    background: linear-gradient(90deg, #ffecbf, #72d9e9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,10 +25,11 @@ body {
         #display {
             padding: 12px;
             border-radius: 12px;
-            box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.247);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            background-color: rgba(255, 255, 255, .35);  
+            backdrop-filter: blur(20px);
 
             #equation {
                 font-size: 18px;
@@ -49,7 +50,8 @@ body {
             grid-gap: 12px;
 
             button {
-                background-color: transparent;
+                background-color: rgba(255, 255, 255, .35);  
+                backdrop-filter: blur(20px);
                 outline: none;
                 padding: 12px;
                 border-radius: 12px;
@@ -60,15 +62,14 @@ body {
                 justify-content: center;
                 align-items: center;
                 border: none;
-                box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.247);
             }
 
             button:hover {
-                box-shadow: 0 0 5px 2px rgba(85, 85, 85, 0.247);
+                background-color: rgba(255, 255, 255, .50);  
             }
 
             button:active {
-                box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.26);;
+                background-color: rgba(255, 255, 255, .60);  
             }
 
             #clear {

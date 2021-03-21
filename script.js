@@ -28,7 +28,7 @@ function subtract(a, b) {
 }
 
 function divide(a, b) {
-    return a / b; 
+    return (a/b).toFixed(2); 
 }
 
 function multiply(a, b) {
